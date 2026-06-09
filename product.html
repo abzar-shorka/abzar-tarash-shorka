@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>جزئیات محصول</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="productBox"></div>
+
+<script>
+
+let product =
+JSON.parse(
+localStorage.getItem("selectedProduct")
+);
+
+let box =
+document.getElementById("productBox");
+
+if(product){
+
+box.innerHTML = `
+
+<div class="product-page">
+
+<img
+src="${product.img}"
+alt="${product.name}"
+>
+
+<h1>${product.name}</h1>
+
+<p>${product.desc}</p>
+
+<h2>
+${product.price} تومان
+</h2>
+
+<button onclick="addToCart()">
+🛒 افزودن به سبد خرید
+</button>
+
+</div>
+
+`;
+
+}
+
+function addToCart(){
+
+let cart =
+JSON.parse(
+localStorage.getItem("cart")
+) || [];
+
+cart.push(product);
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+alert("به سبد خرید اضافه شد");
+
+}
+
+</script>
+
+</body>
+</html>

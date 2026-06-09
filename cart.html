@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>سبد خرید</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="logo">
+        ⚙️ ابزار تراش شرکا
+        </div>
+        
+        <nav>
+        
+            <a href="index.html">
+            🏠 خانه
+            </a>
+            
+            <a href="about.html">
+            ℹ️ درباره ما
+            </a>
+            
+            <a href="contact.html">
+            📞 تماس با ما
+            </a>
+            
+            <a href="cart.html">
+            🛒 سبد خرید
+            </a>
+            
+            <a href="admin-login.html">
+            ⚙️ ادمین
+            </a>
+            
+            </nav>
+        
+        <button class="theme-btn" onclick="toggleTheme()">
+        🌙
+        </button>
+        
+        </header>
+
+<h1 style="text-align:center;margin:30px">
+🛒 سبد خرید
+</h1>
+
+<div id="cartList" class="products"></div>
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let box =
+document.getElementById("cartList");
+
+if(cart.length===0){
+
+box.innerHTML =
+"<h2>سبد خرید خالی است</h2>";
+
+}else{
+
+cart.forEach((p,i)=>{
+
+box.innerHTML += `
+
+<div class="card">
+
+<img src="${p.img}">
+
+<h3>${p.name}</h3>
+
+<p>${p.desc}</p>
+
+<span>${p.price}</span>
+
+<button onclick="removeItem(${i})">
+حذف
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+function removeItem(i){
+
+cart.splice(i,1);
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+</html>

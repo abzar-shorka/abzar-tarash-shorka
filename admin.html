@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+<meta charset="UTF-8">
+<title>پنل ادمین</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+<script>
+if(localStorage.getItem("admin")!=="true"){
+window.location.href="admin-login.html";
+}
+</script>
+
+<header>
+<h1>پنل مدیریت</h1>
+<a href="index.html" onclick="logout()" style="color:gold;">خروج</a>
+</header>
+
+<div class="box">
+<input id="name" placeholder="نام محصول">
+<input id="price" placeholder="قیمت">
+<input id="desc" placeholder="توضیحات">
+<input type="file" id="img">
+<input id="category" placeholder="دسته بندی">
+<button onclick="addProduct()">افزودن</button>
+</div>
+
+<div id="list" class="products"></div>
+
+<script>
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+function addProduct(){
+let name = document.getElementById("name").value;
+let category = document.getElementById("category").value;
+let price = document.getElementById("price").value;
+let desc = document.getElementById("desc").value;
+let file = document.getElementById("img").files[0];
+
+let reader = new FileReader();
+
+reader.onload = function(){
+    products.push({
+name,
+price,
+desc,
+category,
+img:reader.result
+});
+localStorage.setItem("products",JSON.stringify(products));
+show();
+}
+
+if(file){
+    reader.readAsDataURL(file);
+}else{
+    products.push({
+        name,
+        price,
+        desc,
+        category,
+        img:""
+    });
+
+    localStorage.setItem("products", JSON.stringify(products));
+    show();
+}
+}
+
+function show(){
+let box = document.getElementById("list");
+box.innerHTML="";
+products.forEach((p,i)=>{
+box.innerHTML+=`
+
+<div class="card">
+<img src="${p.img}">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+<span>${p.price}</span>
+
+<button onclick="editProduct(${i})">ویرایش</button>
+<button onclick="deleteProduct(${i})">حذف</button>
+</div>
+`;
+});
+}
+
+function logout(){
+localStorage.removeItem("admin");
+}
+function deleteProduct(i){
+products.splice(i,1);
+localStorage.setItem("products",JSON.stringify(products));
+show();
+}
+
+function editProduct(i){
+document.getElementById("name").value = products[i].name;
+document.getElementById("price").value = products[i].price;
+document.getElementById("desc").value = products[i].desc;
+
+products.splice(i,1);
+localStorage.setItem("products",JSON.stringify(products));
+show();
+}
+show();
+</script>
+</div>
+</body>
+</html>

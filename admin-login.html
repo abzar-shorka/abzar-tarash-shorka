@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+   
+<meta charset="UTF-8">
+<title>ورود ادمین</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+<div class="box">
+<h2>ورود ادمین</h2>
+<input id="user" placeholder="نام کاربری">
+<input id="pass" type="password" placeholder="رمز">
+<button onclick="login()">ورود</button>
+</div>
+
+<script>
+function login(){
+if(user.value==="admin" && pass.value==="1234"){
+localStorage.setItem("admin","true");
+window.location.href="admin.html";
+}else{
+alert("اشتباه");
+}
+}
+</script>
+</div>
+</body>
+</html>
