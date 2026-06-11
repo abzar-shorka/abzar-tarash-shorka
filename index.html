@@ -201,11 +201,15 @@ onkeyup="searchProduct()"
     
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 
-let products =
-JSON.parse(localStorage.getItem("products")) || [];
+const supabase = window.supabase.createClient(
+"https://soseymbxahhztupqloim.supabase.co",
+"sb_publishable_SkgJ1ubh3QCWqfOCtzkoDw_9nVIOeeO"
+);
+
+let products = [];
 
 let cart =
 JSON.parse(localStorage.getItem("cart")) || [];
@@ -376,20 +380,29 @@ btn.innerHTML="🌙";
 
 /* بارگذاری محصولات */
 
-function syncProducts(){
+async function loadProducts(){
 
-products =
-JSON.parse(
-localStorage.getItem("products")
-) || [];
+const { data, error } = await supabase
+.from("products")
+.select("*");
+
+if(error){
+
+console.log(error);
+return;
+
+}
+
+products = data;
 
 showProducts(products);
 
-}
-document.getElementById("count")
-.innerText =
+document.getElementById("count").innerText =
 products.length;
-syncProducts();
+
+}
+
+loadProducts();
 
 function openProduct(name){
 
