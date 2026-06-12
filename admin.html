@@ -51,7 +51,6 @@ window.location.href="admin-login.html";
 
 <div id="list" class="products"></div>
 <input type="file" id="img">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 
 const supabase = window.supabase.createClient(
@@ -152,9 +151,11 @@ box.innerHTML = "";
 
 products.forEach((p)=>{
 
-box.innerHTML += `
+    box.innerHTML += `
 
 <div class="card">
+
+<img src="${p.img || ''}" alt="${p.name}">
 
 <h3>${p.name}</h3>
 
