@@ -1,115 +1,447 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 
 <head>
 <meta charset="UTF-8">
-<title>پنل ادمین</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="admin-container">
-<script>
-if(localStorage.getItem("admin")!=="true"){
-window.location.href="admin-login.html";
-}
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<header>
-<h1>پنل مدیریت</h1>
-<a href="index.html" onclick="logout()" style="color:gold;">خروج</a>
+<title>ابزار تراش شرکا</title>
+
+<link rel="icon" type="image/png" href="banner.png.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+⚙️ ابزار تراش شرکا
+</div>
+
+<nav>
+
+    <a href="index.html">
+    🏠 خانه
+    </a>
+    
+    <a href="about.html">
+    ℹ️ درباره ما
+    </a>
+    
+    <a href="contact.html">
+    📞 تماس با ما
+    </a>
+    
+    <a href="cart.html">
+    🛒 سبد خرید
+    </a>
+    
+    <a href="admin-login.html">
+    ⚙️ ادمین
+    </a>
+    
+    </nav>
+
+<button class="theme-btn" onclick="toggleTheme()">
+🌙
+</button>
+
 </header>
 
-<div class="box">
-<input id="name" placeholder="نام محصول">
-<input id="price" placeholder="قیمت">
-<input id="desc" placeholder="توضیحات">
-<input type="file" id="img">
-<input id="category" placeholder="دسته بندی">
-<button onclick="addProduct()">افزودن</button>
+<section class="hero"></section>
+
+<h2 class="products-title">
+محصولات
+</h2>
+<p class="product-count">
+
+    تعداد محصولات:
+    
+    <span id="count"></span>
+    
+    </p>
+
+<div style="text-align:center;margin-bottom:20px">
+
+    <select
+    id="categoryFilter"
+    onchange="filterCategory()">
+    
+    <option value="">
+    همه دسته ها
+    </option>
+    
+    <option value="مته">
+    مته
+    </option>
+    
+    <option value="الماس">
+    الماس
+    </option>
+    
+    <option value="هلدر">
+    هلدر
+    </option>
+    
+    <option value="ابزار تراشکاری">
+    ابزار تراشکاری
+    </option>
+    
+    </select>
+    
+    </div>
+
+<div class="search-box">
+
+<input
+id="search"
+type="text"
+placeholder="🔍 جستجوی محصول..."
+onkeyup="searchProduct()"
+>
+
+<button onclick="clearSearch()">
+❌
+</button>
+
 </div>
 
+<!-- محصولات اینجا نمایش داده می‌شوند -->
 <div id="list" class="products"></div>
 
+<footer>
+
+<div class="footer-box">
+<h3>ابزار تراش شرکا</h3>
+<p>
+عرضه کننده انواع ابزارهای صنعتی و تراشکاری
+</p>
+</div>
+
+<div class="footer-box">
+<h3>ارتباط با ما</h3>
+<p>📞 0912xxxxxxx</p>
+<p>✉️ info@example.com</p>
+</div>
+<div class="footer-box">
+
+    <h3>آدرس</h3>
+    
+    <p>
+    تهران - بازار ابزار
+    </p>
+    
+    </div>
+    
+    <div class="footer-box">
+    
+    <h3>ساعات کاری</h3>
+    
+    <p>
+    شنبه تا پنجشنبه
+    <br>
+    8 صبح تا 6 عصر
+    </p>
+    
+    </div>
+    
+    <div class="footer-box">
+    
+    <h3>شبکه های اجتماعی</h3>
+    
+    <p>📷 اینستاگرام</p>
+    
+    <p>💬 واتساپ</p>
+    
+    <p>📢 تلگرام</p>
+    
+    </div>
+
+<div class="footer-box">
+<h3>دسترسی سریع</h3>
+<a href="index.html">خانه</a>
+<a href="about.html">درباره ما</a>
+<a href="contact.html">تماس با ما</a>
+</div>
+<div class="footer-box">
+
+   
+    
+    </div>
+    
+    <div class="footer-box">
+    
+    <h3>
+    🕒 ساعات کاری
+    </h3>
+    
+    <p>
+    شنبه تا پنجشنبه
+    <br>
+    8 صبح تا 6 عصر
+    </p>
+    
+    </div>
+    
+    <div class="footer-box">
+    
+    <h3>
+    🌐 شبکه های اجتماعی
+    </h3>
+    
+    <p>📷 اینستاگرام</p>
+    
+    <p>💬 واتساپ</p>
+    
+    <p>📢 تلگرام</p>
+    
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-let products = JSON.parse(localStorage.getItem("products")) || [];
 
-function addProduct(){
-let name = document.getElementById("name").value;
-let category = document.getElementById("category").value;
-let price = document.getElementById("price").value;
-let desc = document.getElementById("desc").value;
-let file = document.getElementById("img").files[0];
+const supabase = window.supabase.createClient(
+"https://soseymbxahhztupqloim.supabase.co",
+"sb_publishable_SkgJ1ubh3QCWqfOCtzkoDw_9nVIOeeO"
+);
 
-let reader = new FileReader();
+let products = [];
 
-reader.onload = function(){
-    products.push({
-name,
-price,
-desc,
-category,
-img:reader.result
-});
-localStorage.setItem("products",JSON.stringify(products));
-show();
-}
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
 
-if(file){
-    reader.readAsDataURL(file);
-}else{
-    products.push({
-        name,
-        price,
-        desc,
-        category,
-        img:""
-    });
+/* نمایش محصولات */
 
-    localStorage.setItem("products", JSON.stringify(products));
-    show();
-}
-}
+function showProducts(data = products){
 
-function show(){
 let box = document.getElementById("list");
-box.innerHTML="";
-products.forEach((p,i)=>{
-box.innerHTML+=`
 
-<div class="card">
-<img src="${p.img}">
+box.innerHTML = "";
+
+if(data.length === 0){
+
+box.innerHTML =
+"<h3 style='text-align:center;width:100%'>محصولی وجود ندارد</h3>";
+
+return;
+}
+
+data.forEach((p)=>{
+
+box.innerHTML += `
+
+<div
+class="card"
+onclick="openProduct('${p.name}')">
+
+<img
+src="${p.img || 'https://via.placeholder.com/300x200?text=No+Image'}"
+alt="${p.name}"
+>
+
 <h3>${p.name}</h3>
+
+<p class="rating">
+⭐⭐⭐⭐⭐
+</p>
+
 <p>${p.desc}</p>
-<span>${p.price}</span>
 
-<button onclick="editProduct(${i})">ویرایش</button>
-<button onclick="deleteProduct(${i})">حذف</button>
+<span>${p.price} تومان</span>
+
+<button onclick="addToCart('${p.name}')">
+🛒 افزودن به سبد خرید
+</button>
+
 </div>
+
 `;
+
 });
+
 }
 
-function logout(){
-localStorage.removeItem("admin");
-}
-function deleteProduct(i){
-products.splice(i,1);
-localStorage.setItem("products",JSON.stringify(products));
-show();
+/* جستجو */
+
+function searchProduct(){
+function filterCategory(){
+
+let value =
+document.getElementById(
+"categoryFilter"
+).value;
+
+if(value===""){
+
+showProducts(products);
+
+return;
+
 }
 
-function editProduct(i){
-document.getElementById("name").value = products[i].name;
-document.getElementById("price").value = products[i].price;
-document.getElementById("desc").value = products[i].desc;
+let filtered =
+products.filter(
+p => p.category === value
+);
 
-products.splice(i,1);
-localStorage.setItem("products",JSON.stringify(products));
-show();
+showProducts(filtered);
+
 }
-show();
+
+let value =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+let filtered = products.filter(p =>
+
+p.name.toLowerCase().includes(value)
+
+||
+
+p.desc.toLowerCase().includes(value)
+
+);
+
+showProducts(filtered);
+
+}
+
+/* پاک کردن جستجو */
+
+function clearSearch(){
+
+document.getElementById("search").value = "";
+
+showProducts(products);
+
+}
+
+/* افزودن به سبد خرید */
+
+function addToCart(name){
+
+let item =
+products.find(p => p.name === name);
+
+if(item){
+
+cart.push(item);
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+alert("محصول به سبد خرید اضافه شد 🛒");
+
+}
+
+}
+
+/* اسکرول */
+
+function scrollToProducts(){
+
+document
+.querySelector(".products-title")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+/* تغییر تم */
+
+function toggleTheme(){
+
+document.body.classList.toggle("light");
+
+let btn =
+document.querySelector(".theme-btn");
+
+if(
+document.body.classList.contains("light")
+){
+
+btn.innerHTML="☀️";
+
+}else{
+
+btn.innerHTML="🌙";
+
+}
+
+}
+
+/* بارگذاری محصولات */
+
+async function loadProducts(){
+
+const { data, error } = await supabase
+.from("products")
+.select("*");
+
+if(error){
+
+console.log(error);
+return;
+
+}
+
+products = data;
+
+showProducts(products);
+
+document.getElementById("count").innerText =
+products.length;
+
+}
+
+loadProducts();
+
+function openProduct(name){
+
+let product =
+products.find(
+p => p.name === name
+);
+
+localStorage.setItem(
+"selectedProduct",
+JSON.stringify(product)
+);
+
+location.href =
+"product.html";
+
+}
+
 </script>
-</div>
+
+<a
+href="https://wa.me/989382150838"
+class="whatsapp"
+target="_blank">
+
+💬
+
+</a>
+
+<button
+id="topBtn"
+onclick="window.scrollTo({
+top:0,
+behavior:'smooth'
+})">
+
+⬆️
+
+</button>
+
 </body>
 </html>
