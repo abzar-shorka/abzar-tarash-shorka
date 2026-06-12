@@ -10,7 +10,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/@mysupabase/mysupabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 </head>
 
@@ -53,8 +53,8 @@ window.location.href="admin-login.html";
 <input type="file" id="img">
 <script>
 alert("ADMIN NEW VERSION");
-const mySupabase = window.mysupabase.createClient(
-"https://soseymbxahhztupqloim.mysupabase.co",
+const mySupabase = window.supabase.createClient(
+"https://soseymbxahhztupqloim.supabase.co",
 "sb_publishable_SkgJ1ubh3QCWqfOCtzkoDw_9nVIOeeO"
 );
 
@@ -97,7 +97,7 @@ imageUrl = data.publicUrl;
 
 }
 
-const { error } = await mysupabase
+const { error } = await supabase
 .from("products")
 .insert([
 {
