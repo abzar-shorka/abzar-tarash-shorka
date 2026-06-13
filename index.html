@@ -266,18 +266,14 @@ alt="${p.name}"
 
 /* جستجو */
 
-function searchProduct(){
 function filterCategory(){
 
 let value =
-document.getElementById(
-"categoryFilter"
-).value;
+document.getElementById("categoryFilter").value;
 
 if(value===""){
 
 showProducts(products);
-
 return;
 
 }
@@ -291,6 +287,8 @@ showProducts(filtered);
 
 }
 
+function searchProduct(){
+
 let value =
 document.getElementById("search")
 .value
@@ -302,14 +300,15 @@ p.name.toLowerCase().includes(value)
 
 ||
 
-p.desc.toLowerCase().includes(value)
+(p.desc || "")
+.toLowerCase()
+.includes(value)
 
 );
 
 showProducts(filtered);
 
 }
-
 /* پاک کردن جستجو */
 
 function clearSearch(){
