@@ -73,15 +73,17 @@ async function loadProduct(){
   
 function orderWhatsApp(){
 
-alert(currentProduct.name);
-
 let text =
-`سلام برای محصول ${currentProduct.name} قیمت میخواستم`;
+`سلام
+برای محصول: ${currentProduct.name}
+
+قیمت و موجودی را میخواستم.
+
+لینک محصول:
+${window.location.href}`;
 
 let url =
 `https://wa.me/989382150838?text=${encodeURIComponent(text)}`;
-
-console.log(url);
 
 window.open(url,"_blank");
 
