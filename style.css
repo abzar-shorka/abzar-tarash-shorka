@@ -882,3 +882,23 @@ color:black;
 transform:scale(1.08);
 
 }
+@media(max-width:900px){
+
+nav{
+
+display:none;
+
+}
+
+.menu-btn{
+
+display:flex;
+
+}
+
+}
+.menu-btn{
+
+display:none;
+
+}
