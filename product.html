@@ -1,55 +1,100 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>جزئیات محصول</title>
+<meta charset="UTF-8">
+
+<title>محصول</title>
 
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 
 <body>
 
-<div id="productBox"></div>
-
-<script>
-
-let product =
-JSON.parse(
-localStorage.getItem("selectedProduct")
-);
-
-let box =
-document.getElementById("productBox");
-
-if(product){
-
-box.innerHTML = `
-
 <div class="product-page">
 
 <img
-src="${product.img}"
-alt="${product.name}"
->
+id="productImg"
+style="
+width:400px;
+max-width:100%;
+border-radius:15px;
+">
 
-<h1>${product.name}</h1>
+<h1 id="productName"></h1>
 
-<p>${product.desc}</p>
+<h2 id="productPrice"></h2>
 
-<h2>
-${product.price} تومان
-</h2>
+<p id="productDesc"></p>
 
-<button onclick="addToCart()">
+<button
+onclick="addToCart()">
+
 🛒 افزودن به سبد خرید
-</button>
 
+</button>
+<h2>محصولات مرتبط</h2>
+
+<div id="relatedProducts" class="products"></div>
 </div>
 
-`;
+<script>
+
+const mySupabase =
+window.supabase.createClient(
+"https://soseymbxahhztupqloim.supabase.co",
+"sb_publishable_SkgJ1ubh3QCWqfOCtzkoDw_9nVIOeeO"
+);
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const id =
+params.get("id");
+
+let currentProduct = null;
+
+async function loadProduct(){
+
+const { data , error } =
+await mySupabase
+.from("products")
+.select("*")
+.eq("id", id)
+.single();
+
+if(error){
+
+console.log(error);
+return;
+
+}
+
+currentProduct = data;
+
+document.getElementById(
+"productImg"
+).src = data.img;
+
+document.getElementById(
+"productName"
+).innerText = data.name;
+
+document.getElementById(
+"productPrice"
+).innerText =
+data.price + " تومان";
+
+document.getElementById(
+"productDesc"
+).innerText =
+data.desc;
 
 }
 
@@ -60,18 +105,67 @@ JSON.parse(
 localStorage.getItem("cart")
 ) || [];
 
-cart.push(product);
+cart.push(currentProduct);
 
 localStorage.setItem(
 "cart",
 JSON.stringify(cart)
 );
 
-alert("به سبد خرید اضافه شد");
+alert(
+"محصول به سبد خرید اضافه شد 🛒"
+);
 
 }
 
+loadProduct();
+async function loadRelated(category, currentId){
+
+const { data, error } =
+await mySupabase
+.from("products")
+.select("*")
+.eq("category", category);
+
+if(error){
+return;
+}
+
+let box =
+document.getElementById(
+"relatedProducts"
+);
+
+box.innerHTML = "";
+
+data
+.filter(p => p.id != currentId)
+.slice(0,4)
+.forEach((p)=>{
+
+box.innerHTML += `
+
+<div class="card"
+onclick="
+window.location.href=
+'product.html?id=${p.id}'
+">
+
+<img src="${p.img || ''}">
+
+<h3>${p.name}</h3>
+
+<span>${p.price} تومان</span>
+
+</div>
+
+`;
+
+});
+
+}
 </script>
 
 </body>
+
 </html>
