@@ -479,3 +479,15 @@ padding:10px;
 min-width:250px;
 cursor:pointer;
 }
+#relatedProducts{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding:20px 0;
+}
+
+#relatedProducts .card{
+min-width:250px;
+flex-shrink:0;
+cursor:pointer;
+}
