@@ -491,3 +491,17 @@ min-width:250px;
 flex-shrink:0;
 cursor:pointer;
 }
+#relatedProducts,
+#allProducts{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding:20px 0;
+}
+
+#relatedProducts .card,
+#allProducts .card{
+min-width:250px;
+flex-shrink:0;
+cursor:pointer;
+}
