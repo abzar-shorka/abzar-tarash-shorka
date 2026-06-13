@@ -104,6 +104,85 @@ location.reload();
 }
 
 </script>
+<script>
 
+function loadTheme(){
+
+let theme =
+localStorage.getItem("theme");
+
+if(!theme){
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+theme="light";
+
+}
+
+if(theme==="light"){
+
+document.body.classList.add(
+"light"
+);
+
+let btn =
+document.querySelector(
+".theme-btn"
+);
+
+if(btn){
+
+btn.innerHTML="☀️";
+
+}
+
+}
+
+}
+
+function toggleTheme(){
+
+document.body.classList.toggle(
+"light"
+);
+
+let btn =
+document.querySelector(
+".theme-btn"
+);
+
+if(
+document.body.classList.contains(
+"light"
+)
+){
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+btn.innerHTML="☀️";
+
+}else{
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+btn.innerHTML="🌙";
+
+}
+
+}
+
+window.onload =
+loadTheme;
+
+</script>
 </body>
 </html>
