@@ -147,61 +147,7 @@ display:block;
 
 }
 
-.hero-content{
 
-width:45%;
-
-}
-
-.hero-content h1{
-
-font-size:55px;
-color:#111;
-
-margin-bottom:20px;
-
-}
-
-.hero-content p{
-
-font-size:22px;
-line-height:2;
-color:#666;
-
-margin-bottom:25px;
-
-}
-
-.hero-image{
-
-width:50%;
-
-}
-
-.hero-image img{
-
-width:100%;
-border-radius:20px;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.15);
-
-}
-    
-    .hero h1{
-    font-size:60px;
-    color:gold;
-    margin-bottom:20px;
-    animation:fadeDown 1s;
-    }
-    
-    .hero p{
-    font-size:22px;
-    max-width:700px;
-    line-height:2;
-    color:#ddd;
-    animation:fadeUp 1.2s;
-    }
     
     /* دکمه */
     
