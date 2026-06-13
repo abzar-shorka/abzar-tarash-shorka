@@ -417,22 +417,6 @@ window.location.href =
 }
 loadProducts();
 
-function openProduct(name){
-
-let product =
-products.find(
-p => p.name === name
-);
-
-localStorage.setItem(
-"selectedProduct",
-JSON.stringify(product)
-);
-
-location.href =
-"product.html";
-
-}
 
 </script>
 
