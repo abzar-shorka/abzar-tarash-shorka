@@ -97,7 +97,30 @@ imageUrl = data.publicUrl;
 
 }
 
-const { error } = await mySupabase
+let error;
+
+if(editingId){
+
+const result =
+await mySupabase
+.from("products")
+.update({
+name,
+price,
+desc,
+category,
+img:imageUrl || undefined
+})
+.eq("id", editingId);
+
+error = result.error;
+
+editingId = null;
+
+}else{
+
+const result =
+await mySupabase
 .from("products")
 .insert([
 {
@@ -108,6 +131,10 @@ category,
 img:imageUrl
 }
 ]);
+
+error = result.error;
+
+}
 console.log("UPLOAD URL:", imageUrl);
 console.log("INSERT ERROR:", error);
 console.log("INSERT DONE");
