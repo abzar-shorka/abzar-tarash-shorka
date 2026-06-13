@@ -597,36 +597,31 @@ loadTheme;
 <script>
 
 let slides =
-document.querySelectorAll(
-".slide"
-);
+document.querySelectorAll(".slide");
+
+if(slides.length > 0){
 
 let current = 0;
 
 setInterval(()=>{
 
 slides[current]
-.classList.remove(
-"active"
-);
+.classList.remove("active");
 
 current++;
 
-if(
-current >= slides.length
-){
+if(current >= slides.length){
 
 current = 0;
 
 }
 
 slides[current]
-.classList.add(
-"active"
-);
+.classList.add("active");
 
 },3000);
 
+}
 </script>
 </body>
 </html>
