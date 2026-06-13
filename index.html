@@ -369,15 +369,23 @@ document.body.classList.toggle("light");
 let btn =
 document.querySelector(".theme-btn");
 
-if(
-document.body.classList.contains("light")
-){
+if(document.body.classList.contains("light")){
 
-btn.innerHTML="☀️";
+btn.innerHTML = "☀️";
+
+localStorage.setItem(
+"theme",
+"light"
+);
 
 }else{
 
-btn.innerHTML="🌙";
+btn.innerHTML = "🌙";
+
+localStorage.setItem(
+"theme",
+"dark"
+);
 
 }
 
