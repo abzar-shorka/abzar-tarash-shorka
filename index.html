@@ -235,7 +235,7 @@ box.innerHTML += `
 
 <div
 class="card"
-onclick="openProduct('${p.name}')">
+onclick="openProduct(${p.id})">
 
 <img
 src="${p.img || 'https://via.placeholder.com/300x200?text=No+Image'}"
@@ -409,7 +409,12 @@ document.getElementById("count").innerText =
 products.length;
 
 }
+function openProduct(id){
 
+window.location.href =
+`product.html?id=${id}`;
+
+}
 loadProducts();
 
 function openProduct(name){
