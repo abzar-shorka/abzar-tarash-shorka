@@ -468,3 +468,14 @@
                                         color:#111;
                                         font-weight:bold;
                                         }
+#relatedProducts{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding:10px;
+}
+
+#relatedProducts .card{
+min-width:250px;
+cursor:pointer;
+}
