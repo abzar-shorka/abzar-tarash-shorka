@@ -619,13 +619,30 @@ opacity:1;
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
+repeat(4,minmax(220px,1fr));
 
 gap:20px;
 
-padding:40px;
+padding:30px;
+
+max-width:1400px;
+
+margin:auto;
+
+}
+
+.feature-box{
 
 background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.08);
 
 }
 
