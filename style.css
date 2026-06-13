@@ -505,3 +505,63 @@ min-width:250px;
 flex-shrink:0;
 cursor:pointer;
 }
+/* انیمیشن تغییر تم */
+
+body{
+transition:
+background 0.4s ease,
+color 0.4s ease;
+}
+
+/* تم روشن */
+
+body.light{
+
+background:#ffffff;
+color:#111111;
+
+}
+
+/* تم تیره */
+
+body{
+
+background:#111111;
+color:#ffffff;
+
+}
+
+/* دکمه تم */
+
+.theme-btn{
+
+position:fixed;
+bottom:20px;
+left:20px;
+
+width:55px;
+height:55px;
+
+border:none;
+border-radius:50%;
+
+font-size:24px;
+cursor:pointer;
+
+background:gold;
+color:black;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.3);
+
+transition:.3s;
+
+z-index:9999;
+
+}
+
+.theme-btn:hover{
+
+transform:scale(1.1);
+
+}
