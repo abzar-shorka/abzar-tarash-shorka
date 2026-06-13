@@ -268,52 +268,59 @@ alt="${p.name}"
 
 function filterCategory(){
 
-let value =
-document.getElementById("categoryFilter").value;
-
-if(value===""){
-
-showProducts(products);
-return;
-
-}
-
-let filtered =
-products.filter(
-p => p.category === value
-);
-
-showProducts(filtered);
+applyFilters();
 
 }
 
 function searchProduct(){
 
-let value =
+applyFilters();
+
+}
+/* پاک کردن جستجو */
+function applyFilters(){
+
+let searchValue =
 document.getElementById("search")
 .value
 .toLowerCase();
 
-let filtered = products.filter(p =>
+let categoryValue =
+document.getElementById("categoryFilter")
+.value;
 
-p.name.toLowerCase().includes(value)
+let filtered = products.filter((p)=>{
+
+let matchSearch =
+
+p.name.toLowerCase().includes(searchValue)
 
 ||
 
 (p.desc || "")
 .toLowerCase()
-.includes(value)
+.includes(searchValue);
 
-);
+let matchCategory =
+
+categoryValue === ""
+
+||
+
+p.category === categoryValue;
+
+return matchSearch && matchCategory;
+
+});
 
 showProducts(filtered);
 
 }
-/* پاک کردن جستجو */
-
 function clearSearch(){
 
 document.getElementById("search").value = "";
+
+document.getElementById("categoryFilter").value = "";
 
 showProducts(products);
 
