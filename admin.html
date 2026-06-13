@@ -146,14 +146,13 @@ show();
 
 function show(){
 
-let box =
-document.getElementById("list");
+let box = document.getElementById("list");
 
 box.innerHTML = "";
 
 products.forEach((p)=>{
 
-    box.innerHTML += `
+box.innerHTML += `
 
 <div class="card">
 
@@ -163,7 +162,17 @@ products.forEach((p)=>{
 
 <p>${p.desc}</p>
 
-<span>${p.price}</span>
+<span>${p.price} تومان</span>
+
+<br><br>
+
+<button onclick="editProduct(${p.id})">
+✏️ ویرایش
+</button>
+
+<button onclick="deleteProduct(${p.id})">
+🗑️ حذف
+</button>
 
 </div>
 
@@ -180,7 +189,30 @@ localStorage.removeItem("admin");
 }
 
 loadProducts();
+async function deleteProduct(id){
 
+if(!confirm("حذف شود؟")){
+return;
+}
+
+const { error } =
+await mySupabase
+.from("products")
+.delete()
+.eq("id", id);
+
+if(error){
+
+alert(error.message);
+return;
+
+}
+
+alert("محصول حذف شد ✅");
+
+loadProducts();
+
+}
 </script>
 
 </div>
