@@ -37,6 +37,12 @@ onclick="addToCart()">
 🛒 افزودن به سبد خرید
 
 </button>
+  <br><br>
+
+<button onclick="orderWhatsApp()">
+🟢 سفارش در واتساپ
+</button>
+  
 <h2>محصولات مرتبط</h2>
 
 <div id="relatedProducts" class="products"></div>
@@ -61,7 +67,23 @@ params.get("id");
 let currentProduct = null;
 
 async function loadProduct(){
+  
+function orderWhatsApp(){
 
+let text =
+
+`سلام
+برای محصول ${currentProduct.name}
+قیمت میخواستم.`;
+
+let url =
+
+`https://wa.me/989382150838?text=${encodeURIComponent(text)}`;
+
+window.open(url,"_blank");
+
+}
+  
 const { data , error } =
 await mySupabase
 .from("products")
