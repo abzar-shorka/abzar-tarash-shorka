@@ -388,34 +388,7 @@ behavior:"smooth"
 
 /* تغییر تم */
 
-function toggleTheme(){
 
-document.body.classList.toggle("light");
-
-let btn =
-document.querySelector(".theme-btn");
-
-if(document.body.classList.contains("light")){
-
-btn.innerHTML = "☀️";
-
-localStorage.setItem(
-"theme",
-"light"
-);
-
-}else{
-
-btn.innerHTML = "🌙";
-
-localStorage.setItem(
-"theme",
-"dark"
-);
-
-}
-
-}
 
 /* بارگذاری محصولات */
 
