@@ -95,7 +95,12 @@ document.getElementById(
 "productDesc"
 ).innerText =
 data.desc;
-
+  
+loadRelated(
+data.category,
+data.id
+);
+  
 }
 
 function addToCart(){
