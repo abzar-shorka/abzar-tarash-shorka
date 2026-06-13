@@ -146,7 +146,24 @@ alert(
 );
 
 }
+function orderWhatsApp(){
 
+if(!currentProduct){
+alert("محصول هنوز بارگذاری نشده");
+return;
+}
+
+let text =
+`سلام
+برای محصول ${currentProduct.name}
+قیمت میخواستم`;
+
+let url =
+`https://wa.me/989382150838?text=${encodeURIComponent(text)}`;
+
+window.open(url,"_blank");
+
+}
 loadProduct();
 async function loadRelated(category, currentId){
 
