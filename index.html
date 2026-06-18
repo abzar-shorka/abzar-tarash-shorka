@@ -45,8 +45,12 @@ alt="ابزار تراش شرکا">
 </nav>
 <div class="header-actions">
 
-<button class="search-btn">
+<button
+class="search-btn"
+onclick="toggleSearch()">
+
 🔍
+
 </button>
 
 <button
@@ -65,7 +69,17 @@ onclick="toggleMenu()">
 
 </button>
 </div>
+<div
+class="header-search"
+id="headerSearch">
 
+<input
+type="text"
+placeholder="جستجوی محصول..."
+onkeyup="searchProduct()"
+id="search">
+
+</div>
 
 </header>
 
@@ -497,7 +511,13 @@ window.location.href =
 
 }
 loadProducts();
+function toggleSearch(){
 
+document
+.getElementById("headerSearch")
+.classList.toggle("active");
+
+}
 
 </script>
 
