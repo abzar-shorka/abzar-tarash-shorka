@@ -990,3 +990,47 @@ font-weight:700;
 border-bottom:1px solid #eee;
 
 }
+.header-search{
+
+position:absolute;
+
+top:90px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:white;
+
+padding:15px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.1);
+
+display:none;
+
+z-index:999;
+
+}
+
+.header-search.active{
+
+display:block;
+
+}
+
+.header-search input{
+
+width:300px;
+
+padding:12px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+outline:none;
+
+}
