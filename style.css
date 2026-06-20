@@ -1054,51 +1054,68 @@ text-align:center;
 
 }
 
-.hero-content{
-
-width:100%;
-
-}
-
+.hero-content,
 .hero-image{
 
 width:100%;
-
-margin-top:20px;
 
 }
 
 .hero-content h1{
 
-font-size:45px;
+font-size:34px;
 
 }
 
 .hero-content p{
 
-font-size:18px;
+font-size:16px;
 
 }
 
 .products{
 
-grid-template-columns:1fr;
+grid-template-columns:repeat(2,1fr);
 
-padding:15px;
+gap:12px;
 
-}
-
-.features{
-
-grid-template-columns:1fr;
-
-padding:15px;
+padding:10px;
 
 }
 
 .card{
 
 width:100%;
+
+}
+
+.card img{
+
+height:140px;
+
+}
+
+.features{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+padding:10px;
+
+}
+
+.feature-box{
+
+padding:15px;
+
+}
+
+.logo-img{
+
+width:55px;
+
+height:55px;
 
 }
 
@@ -1150,6 +1167,21 @@ padding:15px;
 width:100%;
 max-width:350px;
 margin:auto;
+}
+
+}
+@media(max-width:480px){
+
+.products{
+
+grid-template-columns:1fr;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
 }
 
 }
