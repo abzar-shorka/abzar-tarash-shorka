@@ -9,27 +9,7 @@
     
     /* هدر */
     
- .header{
 
-position:sticky;
-top:0;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:15px 40px;
-
-background:white;
-
-border-bottom:1px solid #eee;
-
-box-shadow:
-0 2px 15px rgba(0,0,0,.08);
-
-z-index:999;
-
-}
     
   .logo{
 
@@ -849,25 +829,7 @@ object-fit:contain;
 
 }
 
-.header{
 
-position:sticky;
-top:0;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:20px 60px;
-
-background:white;
-
-box-shadow:
-0 2px 20px rgba(0,0,0,.08);
-
-z-index:999;
-
-}
 
 .header-actions{
 
@@ -1094,11 +1056,7 @@ outline:none;
 }
 @media(max-width:768px){
 
-.header{
 
-padding:15px;
-
-}
 
 .hero{
 
