@@ -1002,11 +1002,6 @@ display:flex;
 }
 
 }
-.menu-btn{
-
-display:none;
-
-}
 .mobile-menu{
 
 position:fixed;
@@ -1372,5 +1367,20 @@ border-radius:8px;
 font-size:13px;
 
 font-weight:bold;
+
+}
+.menu-btn{
+display:none;
+}
+
+@media (max-width:768px){
+
+nav{
+display:none;
+}
+
+.menu-btn{
+display:flex;
+}
 
 }
