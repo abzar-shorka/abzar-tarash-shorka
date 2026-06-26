@@ -353,8 +353,9 @@ onclick="openProduct(${p.id})">
 
 <img
 src="${p.img || 'https://via.placeholder.com/300x200?text=No+Image'}"
-alt="${p.name}"
->
+alt="${p.name}">
+
+<div class="card-info">
 
 <h3>${p.name}</h3>
 
@@ -366,9 +367,11 @@ alt="${p.name}"
 
 <span>${p.price} تومان</span>
 
-<button onclick="addToCart('${p.name}')">
-🛒 افزودن به سبد خرید
+<button onclick="event.stopPropagation();addToCart('${p.name}')">
+🛒 افزودن
 </button>
+
+</div>
 
 </div>
 
