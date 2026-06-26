@@ -1339,3 +1339,38 @@ padding:10px;
 }
 
 }
+.price-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:10px;
+
+}
+
+.price-box del{
+
+color:#999;
+
+font-size:14px;
+
+}
+
+.discount{
+
+background:#e53935;
+
+color:white;
+
+padding:4px 8px;
+
+border-radius:8px;
+
+font-size:13px;
+
+font-weight:bold;
+
+}
