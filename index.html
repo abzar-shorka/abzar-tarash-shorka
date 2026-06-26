@@ -364,7 +364,27 @@ alt="${p.name}">
 
 <p>${p.desc}</p>
 
-<span>${p.price} تومان</span>
+<div class="price-box">
+
+<del>
+
+${p.oldprice || ""}
+
+</del>
+
+<div class="discount">
+
+${p.discount || ""}
+
+</div>
+
+</div>
+
+<span>
+
+${p.price} تومان
+
+</span>
 
 <button onclick="event.stopPropagation();addToCart('${p.name}')">
 🛒 افزودن
