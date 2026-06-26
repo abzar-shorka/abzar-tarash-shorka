@@ -1324,3 +1324,18 @@ flex-direction:column;
 justify-content:center;
 
 }
+@media(max-width:768px){
+
+.products{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+padding:10px;
+
+}
+
+}
