@@ -350,48 +350,40 @@ data.forEach((p)=>{
 
 box.innerHTML += `
 
-<div
-class="card"
-onclick="openProduct(${p.id})">
+<div class="card" onclick="openProduct(${p.id})">
 
-<img
-src="${p.img || 'https://via.placeholder.com/300x200?text=No+Image'}"
-alt="${p.name}">
+<img src="${p.img || 'https://via.placeholder.com/300'}">
 
 <div class="card-info">
 
-<h3>${p.name}</h3>
+<div class="rating">
+⭐ 4.8
+</div>
 
-<p class="rating">
-⭐⭐⭐⭐⭐
-</p>
+<h3>${p.name}</h3>
 
 <p>${p.desc}</p>
 
 <div class="price-box">
 
 <del>
-
 ${p.oldprice || ""}
-
 </del>
 
-<div class="discount">
-
+<span class="discount">
 ${p.discount || ""}
+</span>
 
 </div>
 
-</div>
-
-<span>
-
+<span class="price">
 ${p.price} تومان
-
 </span>
 
 <button onclick="event.stopPropagation();addToCart('${p.name}')">
-🛒 افزودن
+
+🛒 افزودن به سبد
+
 </button>
 
 </div>
@@ -399,10 +391,6 @@ ${p.price} تومان
 </div>
 
 `;
-
-});
-
-}
 
 /* جستجو */
 
