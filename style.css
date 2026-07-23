@@ -1342,3 +1342,26 @@ display:flex;
 }
 
 }
+.admin-btn{
+
+text-decoration:none;
+
+padding:10px 18px;
+
+background:#f1c40f;
+
+color:#000;
+
+border-radius:10px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.admin-btn:hover{
+
+background:#d4ac0d;
+
+}
