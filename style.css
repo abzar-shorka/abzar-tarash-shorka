@@ -1365,3 +1365,140 @@ transition:.3s;
 background:#d4ac0d;
 
 }
+/* ===== کارت محصولات جدید ===== */
+
+.card{
+
+background:#fff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+.card-info{
+
+padding:15px;
+
+}
+
+.card h3{
+
+font-size:18px;
+
+margin:10px 0;
+
+color:#222;
+
+}
+
+.card p{
+
+font-size:14px;
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+.rating{
+
+color:#f1c40f;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:10px;
+
+}
+
+.price-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin:10px 0;
+
+}
+
+.price-box del{
+
+color:#999;
+
+font-size:14px;
+
+}
+
+.discount{
+
+background:#e53935;
+
+color:#fff;
+
+padding:4px 8px;
+
+border-radius:8px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+.price{
+
+display:block;
+
+font-size:22px;
+
+font-weight:800;
+
+color:#111;
+
+margin:10px 0;
+
+}
+
+.card button{
+
+width:100%;
+
+padding:12px;
+
+border-radius:12px;
+
+font-size:15px;
+
+font-weight:bold;
+
+}
