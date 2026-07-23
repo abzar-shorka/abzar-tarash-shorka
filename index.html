@@ -352,41 +352,79 @@ box.innerHTML += `
 
 <div class="card" onclick="openProduct(${p.id})">
 
-<img src="${p.img || 'https://via.placeholder.com/300'}">
+
+<div class="product-image">
+
+<img 
+src="${p.img || 'logo.png.png'}"
+alt="${p.name}">
+
+</div>
+
 
 <div class="card-info">
 
+
 <div class="rating">
+
 ⭐ 4.8
+
 </div>
 
-<h3>${p.name}</h3>
 
-<p>${p.desc}</p>
+<h3>
+
+${p.name}
+
+</h3>
+
+
+<p>
+
+${p.desc}
+
+</p>
+
 
 <div class="price-box">
 
-<del>
-${p.oldprice || ""}
-</del>
 
-<span class="discount">
-${p.discount || ""}
-</span>
+${p.oldprice ? 
+
+`<del>${p.oldprice} تومان</del>` 
+
+: ""}
+
+
+${p.discount ?
+
+`<span class="discount">${p.discount}</span>`
+
+:""}
+
 
 </div>
 
-<span class="price">
+
+
+<div class="price">
+
 ${p.price} تومان
-</span>
+
+</div>
+
+
 
 <button onclick="event.stopPropagation();addToCart('${p.name}')">
 
-🛒 افزودن به سبد
+🛒 افزودن به سبد خرید
 
 </button>
 
+
+
 </div>
+
 
 </div>
 
