@@ -2232,3 +2232,67 @@ padding:5px;
 }
 
 }
+@media(max-width:768px){
+
+.card-info{
+
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+
+padding-right:10px;
+
+}
+
+
+.card-info h3{
+
+font-size:15px;
+
+margin:0 0 5px;
+
+}
+
+
+.card-info p{
+
+font-size:12px;
+
+margin:0 0 5px;
+
+}
+
+
+.price-box{
+
+margin-top:auto;
+
+}
+
+
+.price{
+
+font-size:17px;
+
+font-weight:800;
+
+margin-top:5px;
+
+}
+
+
+.card button{
+
+width:120px !important;
+
+height:32px;
+
+font-size:11px;
+
+padding:5px;
+
+margin-top:5px;
+
+}
+
+}
