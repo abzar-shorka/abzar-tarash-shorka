@@ -1689,3 +1689,29 @@ font-size:15px;
 background:#d92f42;
 
 }
+.sort-box{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+
+.sort-box select{
+
+padding:12px 20px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+font-family:Vazirmatn;
+
+font-size:15px;
+
+background:white;
+
+cursor:pointer;
+
+}
