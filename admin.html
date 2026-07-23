@@ -150,7 +150,8 @@ error = result.error;
 
 }
 console.log("UPLOAD URL:", imageUrl);
-console.log("INSERT ERROR:", error);
+console.log(error);
+alert(JSON.stringify(error));
 console.log("INSERT DONE");
 if(error){
 
