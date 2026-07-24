@@ -1,1979 +1,940 @@
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Vazirmatn',sans-serif;
-    }
-    
-   
-    
-    /* هدر */
-    
+}
 
-    
-  .logo{
+body{
+    background:#f5f5f5;
+    color:#222;
+    transition:.3s;
+}
 
-display:flex;
-align-items:center;
-gap:15px;
+img{
+    max-width:100%;
+}
 
-font-size:22px;
+button{
+    cursor:pointer;
+    border:none;
+    background:#f1c40f;
+    color:#000;
+    font-weight:bold;
+    border-radius:12px;
+    padding:10px 18px;
+    transition:.3s;
+}
 
-font-weight:800;
+button:hover{
+    transform:scale(1.05);
+}
 
-color:#222;
+
+/* =========================
+        HEADER
+========================= */
+
+.header{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:15px 40px;
+
+    background:white;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
 
 }
+
+
+.logo{
+
+    display:flex;
+    align-items:center;
+
+}
+
+
+.logo-img{
+
+    width:75px;
+    height:75px;
+
+    object-fit:contain;
+
+}
+
+
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
 
 nav a{
 
-color:#333 !important;
+    text-decoration:none;
 
-text-decoration:none;
+    color:#222;
 
-font-weight:700;
+    font-weight:700;
 
-font-size:17px;
-
-}
-    
-  nav{
-display:flex;
-align-items:center;
-gap:35px;
-}
-    
-    nav a{
-        text-decoration:none;
-        color:white;
-        font-weight:600;
-        padding:10px 18px;
-        border-radius:12px;
-        transition:.3s;
-        }
-        
-        nav a:hover{
-
-            background:rgba(255,215,0,.15);
-            
-            color:gold;
-            
-            }
-
-    /* بنر */
-    
-    .hero{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-padding:50px;
-
-margin:30px;
-
-background:white;
-
-border-radius:30px;
-
-box-shadow:
-0 10px 40px rgba(0,0,0,.08);
-
-overflow:hidden;
+    font-size:16px;
 
 }
+
+
+nav a:hover{
+
+    color:#d4a900;
+
+}
+
+
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.search-btn,
+.theme-btn,
+.menu-btn{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#f1c40f;
+
+}
+
+
+
+.admin-btn{
+
+    background:#f1c40f;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    color:#000;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+        HERO
+========================= */
+
+
+.hero{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    margin:30px;
+
+    padding:40px;
+
+    background:white;
+
+    border-radius:30px;
+
+}
+
 
 .hero-content{
 
-width:45%;
+    width:45%;
 
 }
+
 
 .hero-content h1{
 
-font-size:70px;
+    font-size:60px;
 
-font-weight:800;
-
-line-height:1.3;
-
-color:#111;
-
-margin-bottom:20px;
+    font-weight:800;
 
 }
+
 
 .hero-content p{
 
-font-size:24px;
+    margin:20px 0;
 
-color:#666;
+    font-size:22px;
 
-line-height:2;
-
-margin-bottom:25px;
+    color:#666;
 
 }
+
 
 .hero-image{
 
-width:50%;
+    width:50%;
 
 }
+
 
 .hero-image img{
 
-width:100%;
+    width:100%;
 
-border-radius:20px;
-
-display:block;
+    border-radius:25px;
 
 }
+/* =========================
+       PRODUCTS TITLE
+========================= */
 
+.products-title{
 
-    
-    /* دکمه */
-    
-    button{
-    background:linear-gradient(45deg,#FFD700,#ffb700);
-    color:black;
-    border:none;
-    padding:12px 20px;
-    border-radius:12px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-    }
-    
-    button:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px gold;
-    }
-    
-    /* عنوان */
-    
-    .products-title{
     text-align:center;
-    font-size:42px;
+
     margin:50px 0 20px;
-    color:gold;
-    }
-    
-    .products-title::after{
+
+    font-size:40px;
+
+    color:#d4a900;
+
+}
+
+
+.products-title::after{
+
     content:"";
+
     display:block;
+
     width:120px;
+
     height:4px;
-    background:gold;
+
+    background:#f1c40f;
+
     margin:10px auto;
+
     border-radius:20px;
-    }
-    
-    /* جستجو */
-    
-    .search-box{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-bottom:30px;
-    }
-    
-    .search-box input{
-    width:350px;
-    padding:12px 20px;
-    border-radius:30px;
-    border:2px solid gold;
-    background:#111;
-    color:white;
-    outline:none;
-    }
-    
-    .search-box input:focus{
-    box-shadow:0 0 20px gold;
-    }
-    
-    /* محصولات */
-    
-  .products{
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:25px;
-
-max-width:1400px;
-
-margin:auto;
-
-padding:40px;
 
 }
-    
-    /* فوتر */
-    
-    footer{
-    margin-top:80px;
-    background:#000;
-    padding:50px;
+
+
+/* تعداد محصولات */
+
+.product-count{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#666;
+
+}
+
+
+
+/* =========================
+       PRODUCTS GRID
+========================= */
+
+
+.products{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    border-top:1px solid rgba(255,215,0,.25);
-    }
-    
-    .footer-box h3{
-    color:gold;
-    margin-bottom:15px;
-    }
-    
-    .footer-box p{
-    color:#ccc;
-    line-height:2;
-    }
-    
-    .footer-box a{
-    display:block;
-    color:#ccc;
-    text-decoration:none;
-    margin-bottom:10px;
-    }
-    
-    .footer-box a:hover{
-    color:gold;
-    }
-    
-    /* تم روشن */
-    
-    body.light{
-        background:linear-gradient(
-        135deg,
-        #f8f9fa,
-        #e9ecef
-        );
-        
-        color:#222;
-        }
-        
-        body.light .header{
-        background:rgba(255,255,255,.9);
-        backdrop-filter:blur(15px);
-        border-bottom:1px solid #ddd;
-        }
-        
-        body.light nav a{
-        color:#333;
-        }
-        
-        body.light nav a:hover{
-        background:#ececec;
-        color:#111;
-        }
-        
-        body.light .logo{
-        color:#444;
-        text-shadow:none;
-        }
-        
-        body.light .products-title{
-        color:#444;
-        }
-        
-        body.light .products-title::after{
-        background:#777;
-        }
-        
-        body.light .search-box input{
-        background:white;
-        color:#222;
-        border:2px solid #ccc;
-        }
-        
-        body.light .search-box input:focus{
-        box-shadow:0 0 15px rgba(0,0,0,.15);
-        }
-        
-        body.light footer{
-        background:#e9ecef;
-        border-top:1px solid #ccc;
-        }
-        
-        body.light .footer-box h3{
-        color:#444;
-        }
-        
-        body.light .footer-box p,
-        body.light .footer-box a{
-        color:#555;
-        }
-    
-    /* دکمه تم */
-    
-    .theme-btn{
 
-        padding:10px 14px;
-        
-        border-radius:50%;
-        
-        font-size:18px;
-        
-        }
-    
-    /* انیمیشن */
-    
-    @keyframes fadeDown{
-    from{
-    opacity:0;
-    transform:translateY(-40px);
-    }
-    to{
-    opacity:1;
-    transform:translateY(0);
-    }
-    }
-    
-    @keyframes fadeUp{
-    from{
-    opacity:0;
-    transform:translateY(40px);
-    }
-    to{
-    opacity:1;
-    transform:translateY(0);
-    }
-    }
+    grid-template-columns:
+    repeat(4,1fr);
 
-  .card{
+    gap:20px;
 
-background:white;
+    max-width:1400px;
 
-border-radius:20px;
+    margin:auto;
 
-overflow:hidden;
-
-box-shadow:
-0 8px 25px rgba(0,0,0,.08);
-
-transition:.3s;
+    padding:30px;
 
 }
 
-.card h3{
 
-font-size:20px;
 
-margin:15px;
+/* =========================
+       PRODUCT CARD
+========================= */
 
-color:#222;
-
-}
-
-.card p{
-
-margin:0 15px 10px;
-
-color:#666;
-
-}
-
-.card span{
-
-display:block;
-
-margin:15px;
-
-font-size:20px;
-
-font-weight:800;
-
-color:#f1c40f;
-
-}
-
-.card:hover{
-
-transform:
-translateY(-10px);
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.15);
-
-}
-
-.card:hover img{
-
-transform:scale(1.05);
-
-}
-    
-.card img{
-
-width:100%;
-
-height:250px;
-
-object-fit:cover;
-
-transition:.4s;
-
-}
-@media(max-width:768px){
 
 .card{
 
-display:flex;
+    background:white;
 
-align-items:center;
+    border-radius:20px;
 
-gap:15px;
+    overflow:hidden;
 
-padding:12px;
+    padding:15px;
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.15);
 
 }
 
-.card img{
 
-width:110px;
 
-height:110px;
+/* عکس محصول */
 
-border-radius:15px;
 
-flex-shrink:0;
+.product-image{
+
+    width:100%;
+
+    height:230px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
 }
+
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+
+
+/* اطلاعات */
+
+
+.card-info{
+
+    padding:10px;
+
+}
+
+
+
+.rating{
+
+    color:#f1c40f;
+
+    font-size:17px;
+
+    margin-bottom:8px;
+
+}
+
+
 
 .card h3{
 
-font-size:16px;
+    font-size:18px;
 
-margin-bottom:5px;
+    font-weight:800;
+
+    margin-bottom:10px;
+
+    color:#222;
 
 }
+
+
 
 .card p{
 
-font-size:13px;
+    font-size:14px;
 
-margin:3px 0;
+    color:#666;
+
+    line-height:1.8;
+
+    height:50px;
+
+    overflow:hidden;
+
+}
+
+
+
+/* قیمت و تخفیف */
+
+
+.price-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-top:15px;
 
 }
 
-.card span{
 
-font-size:18px;
 
-font-weight:800;
+.price-box del{
 
-color:#f1c40f;
+    color:#999;
 
-margin-top:8px;
+    font-size:13px;
 
 }
+
+
+
+.discount{
+
+    background:#e53935;
+
+    color:white;
+
+    padding:5px 8px;
+
+    border-radius:8px;
+
+    font-size:12px;
+
+}
+
+
+
+.price{
+
+    display:block;
+
+    text-align:left;
+
+    color:#d4a900;
+
+    font-size:20px;
+
+    font-weight:900;
+
+    margin-top:8px;
+
+}
+
+
+
+/* دکمه خرید */
+
 
 .card button{
 
-margin-top:10px;
+    width:100%;
 
-width:100%;
+    margin-top:15px;
 
-}
-
-}
-    .card button{
-        width:auto;
-        padding:6px 10px;
-        font-size:13px;
-    }
-    .whatsapp{
-        position:fixed;
-        bottom:25px;
-        left:25px;
-        
-        width:60px;
-        height:60px;
-        
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        
-        background:#25D366;
-        color:white;
-        
-        border-radius:50%;
-        
-        font-size:30px;
-        
-        text-decoration:none;
-        
-        box-shadow:0 0 20px rgba(0,0,0,.4);
-        
-        z-index:9999;
-        }
-        .rating{
-            color:gold;
-            font-size:18px;
-            margin:10px 0;
-            }
-            .product-page{
-                max-width:900px;
-                margin:50px auto;
-                padding:30px;
-                text-align:center;
-                }
-                
-                .product-page img{
-                width:100%;
-                max-width:500px;
-                height:300px;
-                object-fit:cover;
-                border-radius:20px;
-                margin-bottom:20px;
-                }
-                
-                .product-page h1{
-                color:gold;
-                margin-bottom:20px;
-                }
-                
-                .product-page p{
-                line-height:2;
-                margin-bottom:20px;
-                }
-                
-                .product-page h2{
-                color:#00ff99;
-                margin-bottom:20px;
-                }
-                .card:hover{
-                    transform:translateY(-10px);
-                    box-shadow:
-                    0 15px 40px rgba(255,215,0,.25),
-                    0 0 25px rgba(255,215,0,.15);
-                    }
-                    #topBtn{
-
-                        position:fixed;
-                        
-                        bottom:25px;
-                        
-                        right:25px;
-                        
-                        width:55px;
-                        
-                        height:55px;
-                        
-                        border-radius:50%;
-                        
-                        font-size:20px;
-                        
-                        z-index:999;
-                        
-                        }
-                        .product-count{
-
-                            text-align:center;
-                            
-                            margin-bottom:20px;
-                            
-                            font-size:18px;
-                            
-                            color:#ddd;
-                            
-                            }
-                            .admin-container{
-
-                                display:flex;
-                                
-                                flex-direction:column;
-                                
-                                align-items:center;
-                                
-                                justify-content:center;
-                                
-                                }
-                                input,
-                                textarea,
-                                select{
-                                
-                                width:350px;
-                                
-                                max-width:90%;
-                                
-                                margin:10px auto;
-                                
-                                display:block;
-                                
-                                }
-                                button{
-
-                                    display:block;
-                                    
-                                    margin:15px auto;
-                                    
-                                    }
-                                    body.light .card{
-
-                                        background:white;
-                                        
-                                        border:1px solid #ddd;
-                                        
-                                        box-shadow:
-                                        0 5px 20px rgba(0,0,0,.08);
-                                        
-                                        }
-                                        
-                                        body.light .card h3{
-                                        color:#333;
-                                        }
-                                        
-                                        body.light .card p{
-                                        color:#666;
-                                        }
-                                        
-                                        body.light .card span{
-                                        color:#111;
-                                        font-weight:bold;
-                                        }
-#relatedProducts{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding:10px;
-}
-
-#relatedProducts .card{
-min-width:250px;
-cursor:pointer;
-}
-#relatedProducts{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding:20px 0;
-}
-
-#relatedProducts .card{
-min-width:250px;
-flex-shrink:0;
-cursor:pointer;
-}
-#relatedProducts,
-#allProducts{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding:20px 0;
-}
-
-#relatedProducts .card,
-#allProducts .card{
-min-width:250px;
-flex-shrink:0;
-cursor:pointer;
-}
-/* انیمیشن تغییر تم */
-
-body{
-transition:
-background 0.4s ease,
-color 0.4s ease;
-}
-
-/* تم روشن */
-
-body.light{
-
-background:#f5f5f5;
-
-color:#111;
+    padding:10px;
 
 }
-
-/* تم تیره */
-
-body{
-
-background:#f5f5f5;
-
-color:#111;
-
-}
-
-/* دکمه تم */
+/* =========================
+        FEATURES
+========================= */
 
 
-.theme-btn:hover{
-
-transform:scale(1.1);
-
-}
-
-
-.slide.active{
-
-opacity:1;
-
-}
 .features{
 
-max-width:1400px;
+    max-width:1400px;
 
-margin:auto;
+    margin:auto;
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(4,1fr);
+    grid-template-columns:
+    repeat(4,1fr);
 
-gap:25px;
+    gap:20px;
 
-padding:40px;
+    padding:40px;
 
 }
+
 
 .feature-box{
 
-background:white;
+    background:white;
 
-padding:30px;
+    padding:30px;
 
-border-radius:20px;
+    text-align:center;
 
-text-align:center;
+    border-radius:20px;
 
-box-shadow:
-0 5px 20px rgba(0,0,0,.08);
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
 
 }
 
 
 .feature-box:hover{
 
-transform:translateY(-5px);
-
-box-shadow:
-0 5px 20px rgba(0,0,0,.1);
+    transform:translateY(-5px);
 
 }
+
 
 .feature-box h3{
 
-margin:15px 0;
-
-color:#111;
+    margin:15px 0;
 
 }
+
 
 .feature-box p{
 
-color:#666;
+    color:#666;
 
 }
+
+
+
+/* =========================
+        BRANDS
+========================= */
+
 
 .brands{
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-gap:50px;
+    flex-wrap:wrap;
 
-flex-wrap:wrap;
+    gap:50px;
 
-padding:40px;
+    padding:40px;
 
-background:white;
-
-border-top:1px solid #eee;
+    background:white;
 
 }
+
+
 
 .brands div{
 
-font-size:28px;
+    font-size:28px;
 
-font-weight:800;
+    font-weight:800;
 
-color:#999;
+    color:#999;
 
-transition:.3s;
+    transition:.3s;
 
 }
+
 
 .brands div:hover{
 
-color:#f1c40f;
-
-}
-.logo{
-
-display:flex;
-align-items:center;
-gap:15px;
-
-}
-
-.logo-img{
-
-width:60px;
-height:60px;
-
-object-fit:contain;
+    color:#f1c40f;
 
 }
 
 
 
-.header-actions{
+/* =========================
+        FOOTER
+========================= */
 
-display:flex;
-align-items:center;
-gap:10px;
 
-}
+footer{
 
-.search-btn{
+    margin-top:60px;
 
-width:50px;
-height:50px;
+    background:#111;
 
-border-radius:50%;
+    padding:50px;
 
-font-size:20px;
+    display:grid;
 
-}
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
 
-.theme-btn{
-
-position:static !important;
-
-width:50px;
-height:50px;
-
-}
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
+    gap:30px;
 
 }
 
-.hero-content,
-.hero-image{
 
-width:100%;
 
-}
+.footer-box h3{
 
-.features{
+    color:#f1c40f;
 
-grid-template-columns:
-repeat(2,1fr);
+    margin-bottom:15px;
 
 }
 
-}
 
-@media(max-width:600px){
 
-.features{
+.footer-box p,
+.footer-box a{
 
-grid-template-columns:1fr;
+    color:#ccc;
 
-}
+    text-decoration:none;
 
-}
-.logo{
-
-display:flex;
-align-items:center;
-gap:15px;
+    line-height:2;
 
 }
 
-.logo-img{
 
-width:80px;
-height:80px;
 
-object-fit:contain;
 
-}
-.header-actions{
+/* =========================
+        MOBILE MENU
+========================= */
 
-display:flex;
-align-items:center;
-gap:10px;
-
-}
-
-.search-btn,
-.theme-btn,
-.menu-btn{
-
-width:50px;
-height:50px;
-
-border:none;
-
-border-radius:50%;
-
-font-size:20px;
-
-cursor:pointer;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#f1c40f;
-
-color:black;
-
-}
-
-.search-btn:hover,
-.theme-btn:hover,
-.menu-btn:hover{
-
-transform:scale(1.08);
-
-}
-@media(max-width:900px){
-
-nav{
-
-display:none;
-
-}
 
 .menu-btn{
 
-display:flex;
+    display:none;
 
 }
 
-}
+
+
 .mobile-menu{
 
-position:fixed;
+    position:fixed;
 
-top:0;
+    top:0;
 
-right:-300px;
+    right:-300px;
 
-width:280px;
+    width:280px;
 
-height:100vh;
+    height:100vh;
 
-background:white;
+    background:white;
 
-padding:30px;
+    padding:30px;
 
-box-shadow:
--5px 0 20px rgba(0,0,0,.15);
+    box-shadow:
 
-transition:.4s;
+    -5px 0 20px rgba(0,0,0,.2);
 
-z-index:9999;
+    transition:.3s;
+
+    z-index:9999;
 
 }
+
+
 
 .mobile-menu.active{
 
-right:0;
+    right:0;
 
 }
+
+
 
 .mobile-menu a{
 
-display:block;
+    display:block;
 
-padding:15px 0;
+    padding:15px 0;
 
-color:#222;
+    color:#222;
 
-text-decoration:none;
+    text-decoration:none;
 
-font-weight:700;
+    font-weight:bold;
 
-border-bottom:1px solid #eee;
+    border-bottom:1px solid #eee;
 
 }
-.header-search{
 
-position:absolute;
 
-top:90px;
 
-left:50%;
+/* =========================
+        WHATSAPP
+========================= */
 
-transform:translateX(-50%);
 
-background:white;
+.whatsapp{
 
-padding:15px;
+    position:fixed;
 
-border-radius:20px;
+    bottom:25px;
 
-box-shadow:
-0 10px 30px rgba(0,0,0,.1);
+    left:25px;
 
-display:none;
+    width:60px;
 
-z-index:999;
+    height:60px;
 
-}
-
-.header-search.active{
-
-display:block;
-
-}
-
-.header-search input{
-
-width:300px;
-
-padding:12px;
-
-border:1px solid #ddd;
-
-border-radius:10px;
-
-outline:none;
-
-}
-@media(max-width:768px){
-
-
-
-.hero{
-
-flex-direction:column;
-
-padding:20px;
-
-margin:15px;
-
-text-align:center;
-
-}
-
-.hero-content,
-.hero-image{
-
-width:100%;
-
-}
-
-.hero-content h1{
-
-font-size:34px;
-
-}
-
-.hero-content p{
-
-font-size:16px;
-
-}
-
-.products{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:12px;
-
-padding:10px;
-
-}
-
-.card{
-
-width:100%;
-
-}
-
-.card img{
-
-height:140px;
-
-}
-
-.features{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:10px;
-
-padding:10px;
-
-}
-
-.feature-box{
-
-padding:15px;
-
-}
-
-.logo-img{
-
-width:55px;
-
-height:55px;
-
-}
-
-}
-@media(max-width:768px){
-
-.header{
-padding:15px;
-}
-
-.logo-img{
-width:60px;
-height:60px;
-}
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-content{
-width:100%;
-}
-
-.hero-image{
-width:100%;
-margin-top:20px;
-}
-
-.hero-content h1{
-font-size:40px;
-}
-
-.hero-content p{
-font-size:18px;
-}
-
-.products{
-grid-template-columns:1fr;
-padding:15px;
-}
-
-.features{
-grid-template-columns:1fr;
-padding:15px;
-}
-
-.card{
-width:100%;
-max-width:350px;
-margin:auto;
-}
-
-}
-@media(max-width:480px){
-
-.products{
-
-grid-template-columns:1fr;
-
-}
-
-.features{
-
-grid-template-columns:1fr;
-
-}
-
-}
-@media(max-width:768px){
-
-.products{
-
-display:flex;
-
-flex-direction:column;
-
-padding:10px;
-
-gap:15px;
-
-}
-
-.card{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-padding:10px;
-
-width:100%;
-
-}
-
-.card img{
-
-width:120px;
-
-height:120px;
-
-flex-shrink:0;
-
-border-radius:15px;
-
-}
-
-.card h3{
-
-font-size:16px;
-
-margin:0;
-
-}
-
-.card p{
-
-font-size:13px;
-
-margin:5px 0;
-
-}
-
-.card span{
-
-font-size:18px;
-
-margin:5px 0;
-
-}
-
-}
-.card-info{
-
-flex:1;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-}
-@media(max-width:768px){
-
-.products{
-
-display:flex;
-
-flex-direction:column;
-
-gap:15px;
-
-padding:10px;
-
-}
-
-}
-.price-box{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-top:10px;
-
-}
-
-.price-box del{
-
-color:#999;
-
-font-size:14px;
-
-}
-
-.discount{
-
-background:#e53935;
-
-color:white;
-
-padding:4px 8px;
-
-border-radius:8px;
-
-font-size:13px;
-
-font-weight:bold;
-
-}
-.menu-btn{
-display:none;
-}
-
-@media (max-width:768px){
-
-nav{
-display:none;
-}
-
-.menu-btn{
-display:flex;
-}
-
-}
-.admin-btn{
-
-text-decoration:none;
-
-padding:10px 18px;
-
-background:#f1c40f;
-
-color:#000;
-
-border-radius:10px;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.admin-btn:hover{
-
-background:#d4ac0d;
-
-}
-/* ===== کارت محصولات جدید ===== */
-
-.card{
-
-background:#fff;
-
-border-radius:18px;
-
-overflow:hidden;
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-transition:.3s;
-
-cursor:pointer;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-
-}
-
-.card img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-}
-
-.card-info{
-
-padding:15px;
-
-}
-
-.card h3{
-
-font-size:18px;
-
-margin:10px 0;
-
-color:#222;
-
-}
-
-.card p{
-
-font-size:14px;
-
-color:#666;
-
-line-height:1.8;
-
-}
-
-.rating{
-
-color:#f1c40f;
-
-font-size:15px;
-
-font-weight:bold;
-
-margin-bottom:10px;
-
-}
-
-.price-box{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin:10px 0;
-
-}
-
-.price-box del{
-
-color:#999;
-
-font-size:14px;
-
-}
-
-.discount{
-
-background:#e53935;
-
-color:#fff;
-
-padding:4px 8px;
-
-border-radius:8px;
-
-font-size:12px;
-
-font-weight:bold;
-
-}
-
-.price{
-
-display:block;
-
-font-size:22px;
-
-font-weight:800;
-
-color:#111;
-
-margin:10px 0;
-
-}
-
-.card button{
-
-width:100%;
-
-padding:12px;
-
-border-radius:12px;
-
-font-size:15px;
-
-font-weight:bold;
-
-}
-/* کارت محصولات شبیه دیجی کالا */
-
-
-.products{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
-padding:30px;
-
-}
-
-
-
-.card{
-
-background:white;
-
-border-radius:18px;
-
-padding:15px;
-
-box-shadow:
-0 2px 10px rgba(0,0,0,.08);
-
-transition:.3s;
-
-cursor:pointer;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.15);
-
-}
-
-
-
-.product-image{
-
-height:230px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-
-
-.product-image img{
-
-max-width:100%;
-
-max-height:220px;
-
-object-fit:contain;
-
-}
-
-
-
-.card-info h3{
-
-font-size:17px;
-
-line-height:1.8;
-
-margin:10px 0;
-
-color:#333;
-
-}
-
-
-
-.card-info p{
-
-font-size:14px;
-
-color:#777;
-
-height:45px;
-
-overflow:hidden;
-
-}
-
-
-
-.rating{
-
-color:#f9b000;
-
-font-size:16px;
-
-}
-
-
-
-.price-box{
-
-display:flex;
-
-gap:10px;
-
-align-items:center;
-
-margin-top:10px;
-
-}
-
-
+    border-radius:50%;
 
-.price-box del{
+    background:#25D366;
 
-color:#999;
+    color:white;
 
-font-size:13px;
+    display:flex;
 
-}
-
-
-
-.discount{
-
-background:#e53935;
-
-color:white;
-
-padding:3px 8px;
-
-border-radius:8px;
-
-font-size:12px;
-
-}
-
-
-
-.price{
-
-font-size:20px;
-
-font-weight:800;
-
-color:#222;
-
-margin:15px 0;
-
-}
-
-
-
-.card button{
-
-width:100%;
-
-background:#ef394e;
-
-color:white;
-
-border-radius:10px;
-
-padding:12px;
-
-font-size:15px;
-
-}
-
-
-.card button:hover{
-
-background:#d92f42;
-
-}
-.sort-box{
-
-text-align:center;
-
-margin-bottom:20px;
-
-}
-
-
-.sort-box select{
-
-padding:12px 20px;
-
-border-radius:12px;
-
-border:1px solid #ddd;
-
-font-family:Vazirmatn;
-
-font-size:15px;
-
-background:white;
-
-cursor:pointer;
-
-}
-.products{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-max-width:1400px;
-
-margin:auto;
-
-padding:30px;
-
-}
+    align-items:center;
 
+    justify-content:center;
 
+    font-size:30px;
 
-.card{
+    text-decoration:none;
 
-background:white;
+    z-index:9999;
 
-border-radius:20px;
-
-overflow:hidden;
-
-box-shadow:
-0 5px 20px rgba(0,0,0,.1);
-
-transition:.3s;
-
-cursor:pointer;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-0 15px 35px rgba(0,0,0,.18);
-
-}
-
-
-
-.product-image{
-
-height:230px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:#fff;
-
-}
-
-
-
-.product-image img{
-
-width:100%;
-
-height:100%;
-
-object-fit:contain;
-
-}
-
-
-
-.card-body{
-
-padding:20px;
-
-text-align:center;
-
-}
-
-
-
-.card-body h3{
-
-font-size:18px;
-
-margin-bottom:10px;
-
-color:#222;
-
-}
-
-
-
-.rating{
-
-color:#f1c40f;
-
-margin:10px;
-
 }
-
 
 
-.card-body p{
 
-color:#777;
 
-font-size:14px;
+/* =========================
+        TOP BUTTON
+========================= */
 
-height:45px;
 
-}
+#topBtn{
 
+    position:fixed;
 
+    right:25px;
 
-.price{
+    bottom:25px;
 
-font-size:22px;
+    width:55px;
 
-font-weight:800;
+    height:55px;
 
-color:#e67e22;
+    border-radius:50%;
 
-margin:15px;
+    z-index:999;
 
 }
-
 
 
-.card button{
-
-width:100%;
-
-border-radius:12px;
-
-}
 
+/* =========================
+        MOBILE
+========================= */
 
 
 @media(max-width:900px){
 
-.products{
 
-grid-template-columns:repeat(2,1fr);
+.header{
 
-}
-
-}
-
-
-
-@media(max-width:500px){
-
-.products{
-
-grid-template-columns:1fr;
+    padding:15px;
 
 }
 
+
+
+nav{
+
+    display:none;
+
 }
-/* کارت محصول جمع و جور موبایل */
 
-@media(max-width:768px){
 
-.products{
+
+.menu-btn{
+
     display:flex;
-    flex-direction:column;
-    gap:12px;
-    padding:10px;
+
 }
+
+
+
+.admin-btn{
+
+    display:none;
+
+}
+
+
+
+.hero{
+
+    flex-direction:column;
+
+    margin:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+
+
+.hero-content,
+.hero-image{
+
+    width:100%;
+
+}
+
+
+
+.hero-content h1{
+
+    font-size:35px;
+
+}
+
+
+
+.hero-content p{
+
+    font-size:16px;
+
+}
+
+
+
+/* کارت محصولات موبایل */
+
+.products{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:10px;
+
+    gap:15px;
+
+}
+
 
 
 .card{
 
     display:flex;
-    flex-direction:row;
-    align-items:center;
 
-    width:100%;
-    max-width:100%;
-
-    height:140px;
+    height:150px;
 
     padding:10px;
+
+    gap:15px;
 
     border-radius:15px;
 
 }
 
 
-.card .product-image{
 
-    width:110px;
-    height:110px;
+.product-image{
+
+    width:120px;
+
+    height:120px;
 
     flex-shrink:0;
 
 }
 
 
-.card img{
-
-    width:110px;
-    height:110px;
-
-    object-fit:cover;
-
-    border-radius:12px;
-
-}
-
 
 .card-info{
 
-    padding-right:10px;
+    padding:0;
 
     overflow:hidden;
 
 }
 
 
+
 .card h3{
 
-font-size:15px;
-
-display:-webkit-box;
--webkit-line-clamp:2;
--webkit-box-orient:vertical;
-
-overflow:hidden;
+    font-size:15px;
 
 }
+
 
 
 .card p{
 
     font-size:12px;
 
-    display:-webkit-box;
-
-    -webkit-line-clamp:2;
-
-    -webkit-box-orient:vertical;
-
-    overflow:hidden;
+    height:35px;
 
 }
 
-
-.rating{
-
-    font-size:13px;
-
-}
 
 
 .price{
@@ -1983,617 +944,426 @@ overflow:hidden;
 }
 
 
+
 .card button{
 
-    padding:6px 10px;
+    padding:7px;
 
     font-size:12px;
 
-    margin-top:5px;
-
-}
-
-}
-@media(max-width:768px){
-
-.card{
-
-display:flex;
-flex-direction:row;
-align-items:flex-start;
-height:150px;
-padding:12px;
-gap:12px;
-border-radius:18px;
-overflow:hidden;
-
 }
 
 
-/* عکس محصول */
 
-.card img{
+.features{
 
-width:100px;
-height:100px;
-object-fit:cover;
-border-radius:12px;
-flex-shrink:0;
+    grid-template-columns:
 
-}
+    repeat(2,1fr);
 
-
-/* بخش متن */
-
-.card-info{
-
-flex:1;
-height:100%;
-
-display:flex;
-flex-direction:column;
-
-overflow:hidden;
-
-}
-
-
-/* امتیاز */
-
-.rating{
-
-font-size:13px;
-margin:0 0 5px;
-
-}
-
-
-/* اسم */
-
-.card h3{
-
-font-size:15px;
-margin:0;
-
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-
-}
-
-
-/* توضیحات */
-
-.card p{
-
-font-size:12px;
-color:#777;
-
-overflow:hidden;
-
-white-space:nowrap;
-
-text-overflow:ellipsis;
-
-}
-
-
-/* قیمت */
-
-.price{
-
-margin-top:auto;
-
-font-size:18px;
-font-weight:800;
-color:#f1c40f;
-
-align-self:flex-start;
-
-}
-
-
-/* قیمت قبلی و تخفیف */
-
-.price-box{
-
-display:flex;
-gap:8px;
-align-items:center;
-
-}
-
-
-.discount{
-
-font-size:12px;
-padding:3px 7px;
-
-}
-
-
-/* دکمه */
-
-.card button{
-
-font-size:12px;
-padding:6px 10px;
-
-}
-
-}
-@media(max-width:768px){
-
-.products{
-display:flex !important;
-flex-direction:column;
-gap:12px;
-}
-
-
-.card{
-
-display:flex !important;
-flex-direction:row !important;
-align-items:center;
-
-height:150px !important;
-
-padding:10px;
-
-}
-
-
-.product-image{
-
-width:110px !important;
-height:110px !important;
-
-flex-shrink:0;
-
-}
-
-
-.product-image img{
-
-width:110px !important;
-height:110px !important;
-
-object-fit:cover;
-
-border-radius:15px;
-
-}
-
-
-.card-info{
-
-flex:1;
-
-height:120px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:space-between;
-
-overflow:hidden;
-
-}
-
-
-.card-info h3{
-
-font-size:15px;
-
-display:block;
-
-overflow:hidden;
-
-}
-
-
-.card-info p{
-
-font-size:12px;
-
-}
-
-
-.price{
-
-font-size:18px;
-
-color:#f39c12;
-
-font-weight:bold;
-
-text-align:left;
-
-}
-
-
-.price-box{
-
-order:5;
-
-display:flex;
-
-}
-
-
-.card button{
-
-font-size:11px;
-
-padding:5px;
-
-}
-
-}
-@media(max-width:768px){
-
-.card-info{
-
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
-
-padding-right:10px;
-
-}
-
-
-.card-info h3{
-
-font-size:15px;
-
-margin:0 0 5px;
-
-}
-
-
-.card-info p{
-
-font-size:12px;
-
-margin:0 0 5px;
-
-}
-
-
-.price-box{
-
-margin-top:auto;
-
-}
-
-
-.price{
-
-font-size:17px;
-
-font-weight:800;
-
-margin-top:5px;
-
-}
-
-
-.card button{
-
-width:120px !important;
-
-height:32px;
-
-font-size:11px;
-
-padding:5px;
-
-margin-top:5px;
-
-}
-
-}
-
-/* اصلاح کارت محصولات - نسخه موبایل و دسکتاپ */
-
-/* کارت محصول */
-.card{
-    background:#fff;
-    border-radius:18px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    height:auto;
-    min-height:360px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-/* عکس محصول */
-.product-image{
-    width:100%;
-    height:190px;
-    overflow:hidden;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
     padding:15px;
-}
-
-/* اطلاعات محصول */
-.card-info{
-    padding:12px 15px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
-}
-
-.rating{
-    font-size:14px;
-    margin-bottom:5px;
-}
-
-.card h3{
-    font-size:17px;
-    margin:5px 0;
-    height:35px;
-    overflow:hidden;
-}
-
-.card p{
-    font-size:13px;
-    color:#666;
-    line-height:1.8;
-    height:45px;
-    overflow:hidden;
-}
-
-/* قیمت سمت چپ */
-.price-box{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    gap:10px;
-    margin-top:auto;
-}
-
-.price{
-    text-align:left;
-    direction:rtl;
-    font-size:20px;
-    font-weight:800;
-    color:#e0ad00;
-    margin-top:8px;
-}
-
-/* تخفیف */
-.discount{
-    background:#e53935;
-    color:white;
-    padding:4px 8px;
-    border-radius:8px;
-    font-size:12px;
-}
-
-/* دکمه */
-.card button{
-    margin-top:12px;
-    width:100%;
-    padding:8px;
-}
-
-/* موبایل */
-@media(max-width:768px){
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    padding:10px;
-}
-
-.card{
-    min-height:300px;
-    border-radius:14px;
-}
-
-.product-image{
-    height:120px;
-}
-
-.product-image img{
-    padding:8px;
-}
-
-.card-info{
-    padding:8px;
-}
-
-.card h3{
-    font-size:14px;
-    height:32px;
-}
-
-.card p{
-    font-size:11px;
-    height:35px;
-}
-
-.price{
-    font-size:15px;
-}
-
-.card button{
-    font-size:11px;
-    padding:7px 3px;
-}
 
 }
 
-@media(max-width:420px){
 
-.products{
+
+.feature-box{
+
+    padding:15px;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+.features{
+
     grid-template-columns:1fr;
+
 }
+
+
 
 .card{
-    min-height:270px;
-}
+
+    height:140px;
 
 }
-/* اصلاح نهایی کارت محصولات */
 
-.card{
+
+
+.product-image{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+
+
+}
+/* =========================
+        SEARCH
+========================= */
+
+
+.header-search{
+
+    position:absolute;
+
+    top:90px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
     background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    transition:.3s;
-    display:flex;
-    flex-direction:column;
-}
 
-
-.product-image{
-    width:100%;
-    height:220px;
-    overflow:hidden;
-}
-
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
     padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.15);
+
+    display:none;
+
+    z-index:999;
+
 }
 
 
-.card-info{
-    padding:15px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
+
+.header-search.active{
+
+    display:block;
+
 }
 
 
-.rating{
-    color:#ffc107;
-    font-size:14px;
+
+.header-search input{
+
+    width:300px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
 }
 
 
-.card h3{
-    font-size:17px;
-    height:45px;
-    overflow:hidden;
+
+/* =========================
+        SORT & FILTER
+========================= */
+
+
+.sort-box{
+
+    text-align:center;
+
+    margin:20px;
+
 }
 
 
-.card p{
-    font-size:14px;
-    color:#777;
-    height:40px;
-    overflow:hidden;
+
+select{
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
+    background:white;
+
 }
 
 
-.price-box{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    margin-top:auto;
+
+/* =========================
+        LIGHT THEME
+========================= */
+
+
+body.light{
+
+    background:#f5f5f5;
+
+    color:#222;
+
 }
 
 
-.price-box del{
-    color:#999;
-    font-size:13px;
+
+body.light .header{
+
+    background:white;
+
 }
 
 
-.discount{
-    background:#e53935;
+
+body.light .card{
+
+    background:white;
+
+}
+
+
+
+body.light .mobile-menu{
+
+    background:white;
+
+}
+
+
+
+body.light footer{
+
+    background:#111;
+
+}
+
+
+
+
+/* =========================
+        DARK THEME
+========================= */
+
+
+body:not(.light){
+
+    background:#111;
+
     color:white;
-    padding:3px 8px;
-    border-radius:6px;
-    font-size:12px;
-    margin-top:5px;
+
 }
 
 
-.price{
-    font-size:19px;
-    font-weight:800;
-    color:#d4a000;
-    margin-top:8px;
+
+body:not(.light) .header{
+
+    background:#181818;
+
 }
 
 
-.card button{
+
+body:not(.light) nav a{
+
+    color:white;
+
+}
+
+
+
+body:not(.light) .card{
+
+    background:#1d1d1d;
+
+}
+
+
+
+body:not(.light) .card h3{
+
+    color:white;
+
+}
+
+
+
+body:not(.light) .card p{
+
+    color:#bbb;
+
+}
+
+
+
+body:not(.light) .feature-box{
+
+    background:#1d1d1d;
+
+    color:white;
+
+}
+
+
+
+body:not(.light) .brands{
+
+    background:#181818;
+
+}
+
+
+
+body:not(.light) .mobile-menu{
+
+    background:#181818;
+
+}
+
+
+
+body:not(.light) .mobile-menu a{
+
+    color:white;
+
+}
+
+
+
+
+/* =========================
+        PRODUCT PAGE
+========================= */
+
+
+.product-page{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+
+
+.product-page img{
+
     width:100%;
-    margin-top:12px;
-    font-size:13px;
+
+    max-width:500px;
+
+    height:350px;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
 }
 
 
-/* موبایل مثل دیجی کالا */
 
-@media(max-width:768px){
+.product-page h1{
 
-.products{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    padding:10px;
+    color:#d4a900;
+
+    margin:20px;
+
 }
+
+
+
+.product-page p{
+
+    line-height:2;
+
+}
+
+
+
+
+
+/* =========================
+        ANIMATION
+========================= */
+
+
+.card,
+.feature-box,
+button{
+
+    transition:.3s;
+
+}
+
+
+
+/* =========================
+        VERY SMALL MOBILE
+========================= */
+
+
+@media(max-width:360px){
+
+
+.logo-img{
+
+    width:50px;
+
+    height:50px;
+
+}
+
+
+
+.search-btn,
+.theme-btn,
+.menu-btn{
+
+    width:40px;
+
+    height:40px;
+
+}
+
 
 
 .card{
-    border-radius:14px;
+
+    height:130px;
+
 }
+
 
 
 .product-image{
-    height:130px;
-}
 
+    width:90px;
 
-.product-image img{
-    padding:8px;
-}
+    height:90px;
 
-
-.card-info{
-    padding:8px;
 }
 
 
 .card h3{
+
     font-size:14px;
-    height:38px;
-}
 
-
-.card p{
-    font-size:12px;
-    height:32px;
 }
 
 
 .price{
-    font-size:15px;
+
+    font-size:14px;
+
 }
 
-
-.card button{
-    padding:8px;
-    font-size:12px;
-}
 
 }
