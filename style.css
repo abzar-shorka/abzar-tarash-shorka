@@ -2296,3 +2296,153 @@ margin-top:5px;
 }
 
 }
+
+/* اصلاح کارت محصولات - نسخه موبایل و دسکتاپ */
+
+/* کارت محصول */
+.card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    min-height:360px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+/* عکس محصول */
+.product-image{
+    width:100%;
+    height:190px;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:15px;
+}
+
+/* اطلاعات محصول */
+.card-info{
+    padding:12px 15px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.rating{
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.card h3{
+    font-size:17px;
+    margin:5px 0;
+    height:35px;
+    overflow:hidden;
+}
+
+.card p{
+    font-size:13px;
+    color:#666;
+    line-height:1.8;
+    height:45px;
+    overflow:hidden;
+}
+
+/* قیمت سمت چپ */
+.price-box{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap:10px;
+    margin-top:auto;
+}
+
+.price{
+    text-align:left;
+    direction:rtl;
+    font-size:20px;
+    font-weight:800;
+    color:#e0ad00;
+    margin-top:8px;
+}
+
+/* تخفیف */
+.discount{
+    background:#e53935;
+    color:white;
+    padding:4px 8px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+/* دکمه */
+.card button{
+    margin-top:12px;
+    width:100%;
+    padding:8px;
+}
+
+/* موبایل */
+@media(max-width:768px){
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    padding:10px;
+}
+
+.card{
+    min-height:300px;
+    border-radius:14px;
+}
+
+.product-image{
+    height:120px;
+}
+
+.product-image img{
+    padding:8px;
+}
+
+.card-info{
+    padding:8px;
+}
+
+.card h3{
+    font-size:14px;
+    height:32px;
+}
+
+.card p{
+    font-size:11px;
+    height:35px;
+}
+
+.price{
+    font-size:15px;
+}
+
+.card button{
+    font-size:11px;
+    padding:7px 3px;
+}
+
+}
+
+@media(max-width:420px){
+
+.products{
+    grid-template-columns:1fr;
+}
+
+.card{
+    min-height:270px;
+}
+
+}
